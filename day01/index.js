@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const puzzle = fs.readFileSync('./input.txt', 'utf-8')
 
-const common = puzzle
+const all = puzzle
   .split('\n\n')
   .map((line) =>
     line
@@ -14,9 +14,9 @@ const common = puzzle
     return b - a
   })
 
-const solution1 = common[0]
+const solution1 = all[0]
 
-const solution2 = common
+const solution2 = all
   .slice(0, 3)
   .reduce((accumulator, currentValue) => accumulator + currentValue)
 
